@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "big-finance"
+name = "Big_Finance"
 version = "0.1.0"
 description = ""
 authors = ["SuperFeliz <linuxeopoder@gmail.com>"]
 readme = "README.md"
-packages = [{include = "big_finance"}]
+packages = [{include = "Big_Finance"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
