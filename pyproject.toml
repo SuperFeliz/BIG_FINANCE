@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "big-finance"
+version = "0.1.0"
+description = ""
+authors = ["SuperFeliz <linuxeopoder@gmail.com>"]
+readme = "README.md"
+packages = [{include = "big_finance"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2.3"
+pillow = "^10.0.0"
+python-decouple = "^3.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
