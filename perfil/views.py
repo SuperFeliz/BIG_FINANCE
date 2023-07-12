@@ -8,3 +8,6 @@ def home(request):
 
 def gerenciar(request):
     return render(request, 'gerenciar.html')
+
+def cadastrar_banco(request):
+    return HttpResponse('Estou no cadastrtar banco')
