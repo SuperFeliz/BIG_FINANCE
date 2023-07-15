@@ -24,20 +24,21 @@
             <div class="contas">
 
 
-                <div class="lista-contas-main">
-                    <span><img width="10%" src="#">&nbsp&nbspBigbanck</span>
-
-                    <span class="total-conta positivo ">R$ 4.700,00&nbsp&nbsp&nbsp <a href="#"><img
-                                src="{% static 'perfil/img/exit.png' %}"></a></span>
-                </div>
-                <br>
+                {% for conta in contas %}
+                    <div class="lista-contas-main">
+                        <span><img width="10%" src="{{conta.icone.url}}">&nbsp&nbsp{{conta.apelido}}</span>
+                
+                        <span class="total-conta positivo ">R$ {{conta.valor}}&nbsp&nbsp&nbsp <a href="/perfil/deletar_banco/{{conta.id}}"><img src="{% static 'perfil/img/exit.png' %}"></a></span>
+                    </div>
+                    <br>
+                {% endfor %}
 
 
             </div>
 
             <hr>
             <span class="fonte-destaque">Total:</span>
-            <span class="positivo total-conta font-destaque">R$ 8.100,00</span>
+            <span class="positivo total-conta font-destaque">R$ {{ total_contas }}</span>
         </div>
 
         <div class="col-md-2"></div>
