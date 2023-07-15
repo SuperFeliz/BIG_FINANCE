@@ -58,11 +58,13 @@
 
                 <div class="div-contas">
 
-                    <div class="lista-conta">
-                        <span>Big Banck</span>
-                        <span class="total-conta">R$ 12.000,00</span>
-                    </div>
-                    <br>
+                    {% for conta in contas %}
+                        <div class="lista-conta">
+                            <span>{{conta.apelido}}</span>
+                            <span class="total-conta">R$ {{conta.valor}}</span>
+                        </div>
+                        <br>
+                    {% endfor %}
 
                 </div>
                 <hr class="hr-borda">

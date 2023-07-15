@@ -6,7 +6,8 @@ from django.contrib import messages
 #from django.db.models import Sum
 
 def home(request):
-    return render(request, 'home.html')
+    contas = Conta.objects.all()
+    return render(request, 'home.html', {'contas': contas})
 
 
 def gerenciar(request):
