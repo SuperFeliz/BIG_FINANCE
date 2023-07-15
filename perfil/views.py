@@ -7,7 +7,14 @@ from django.contrib import messages
 
 def home(request):
     contas = Conta.objects.all()
-    return render(request, 'home.html', {'contas': contas})
+    
+    total_contas = 0
+    for conta in contas:
+        total_contas+= conta.valor
+        
+    #TODO: Refatorar códigos repetidos 250
+        
+    return render(request, 'home.html', {'contas': contas, 'total_contas': total_contas})
 
 
 def gerenciar(request):
