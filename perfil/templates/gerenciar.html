@@ -98,13 +98,14 @@
             <br>
             <div class="contas">
 
+                {% for categoria in categorias %}
+                    <div class="lista-contas-main">
+                        <span>{{categoria}}</span>
 
-                <div class="lista-contas-main">
-                    <span>Lazer</span>
-
-                    <span class="total-conta"><a href="#"><img src="#"></a></span>
-                </div>
-                <br>
+                        <span class="total-conta"><a href="#"><img src="#"></a></span>
+                    </div>
+                    <br>
+                {% endfor %}
 
             </div>
         </div>
