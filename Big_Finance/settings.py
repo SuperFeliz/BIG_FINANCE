@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     
     #My apps
     'perfil',
+    'extrato',
 ]
 
 MIDDLEWARE = [
