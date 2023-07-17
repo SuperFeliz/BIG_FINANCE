@@ -16,6 +16,7 @@ weasyprint = "^59.0"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.4.1"
+djlint = "^1.31.1"
 
 [build-system]
 requires = ["poetry-core"]
