@@ -21,4 +21,5 @@ def update_valor_categoria(request, id):
 
 def ver_planejamento(request):
     categorias = Categoria.objects.all()
+    #TODO: Fazer barra com progresso total
     return render(request, 'ver_planejamento.html', {'categorias': categorias})
