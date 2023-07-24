@@ -114,3 +114,8 @@ def dashboard(request):
             total = total + val.valor
         dados[categoria.categoria] = total
     return render(request, 'dashboard.html', {'labels': list(dados.keys()), 'values': list(dados.values())})
+
+
+#TODO: fazer calculo financeiro v3 129
+def calculo_finaceiro(request):
+    ...
