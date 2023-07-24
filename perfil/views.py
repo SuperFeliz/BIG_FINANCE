@@ -4,18 +4,32 @@ from .models import Conta, Categoria
 from django.contrib.messages import constants
 from django.contrib import messages
 from extrato.models import Valores
+from datetime import datetime
 #from django.db.models import Sum
 
+# TODO: Criar função de calcular v3 123
 def home(request):
+    valores = Valores.objects.filter(data__month=datetime.now().month)
+    entradas = valores.filter(tipo='E')
+    saidas = valores.filter(tipo='S')
+    
+    total_entradas = 0
+    for entrada in entradas:
+        total_entradas += entrada.valor
+        
+    total_saidas = 0
+    for saida in saidas:
+        total_saidas = total_saidas + saida.valor
+        
     contas = Conta.objects.all()
     
     total_contas = 0
     for conta in contas:
         total_contas+= conta.valor
         
-    #TODO: Refatorar códigos repetidos 250
+    #TODO: Refatorar códigos repetidos v1 250
         
-    return render(request, 'home.html', {'contas': contas, 'total_contas': total_contas})
+    return render(request, 'home.html', {'contas': contas, 'total_contas': total_contas, 'total_entradas': total_entradas, 'total_saidas': total_saidas})
 
 
 def gerenciar(request):
